@@ -1,0 +1,128 @@
+/* Body Style */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 1s ease;
+}
+
+/* Clock container */
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Clock design */
+.clock {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Greeting display */
+.greeting {
+    font-size: 30px;
+    color: #fbc2eb;
+    margin-bottom: 10px;
+}
+
+/* Time display */
+.time {
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+}
+
+/* AM/PM display */
+.am-pm {
+    font-size: 20px;
+    color: #fbc2eb;
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Date display */
+.date {
+    font-size: 25px;
+    color: #fbc2eb;
+    font-weight: 400;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Day of the week */
+.day {
+    font-size: 20px;
+    color: #fbc2eb;
+    margin-top: 10px;
+}
+
+/* Glowing effect for time */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 
+                     0 0 30px rgba(255, 255, 255, 0.4), 
+                     0 0 40px rgba(255, 255, 255, 0.5), 
+                     0 0 50px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 
+                     0 0 40px rgba(255, 255, 255, 0.5), 
+                     0 0 50px rgba(255, 255, 255, 0.6), 
+                     0 0 60px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 
+                     0 0 30px rgba(255, 255, 255, 0.4), 
+                     0 0 40px rgba(255, 255, 255, 0.5), 
+                     0 0 50px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Time and AM/PM glow */
+.time {
+    animation: glow 1.5s infinite ease-in-out;
+}
+
+/* Blinking colon effect */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.time::after {
+    content: ':';
+    animation: blink 1s infinite;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff9a9e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #a6c1ee;
+}
